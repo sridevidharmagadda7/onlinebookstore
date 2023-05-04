@@ -1,0 +1,15 @@
+pipeline {
+    agent any
+        stages {
+            stage ('SCM') {
+                steps {
+                    git 'https://github.com/sridevidharmagadda7/onlinebookstore.git'
+                }
+            }
+            stage ('Build') {
+                steps {
+                    sh 'mvn clean package'
+                }
+            }
+        }
+    }
